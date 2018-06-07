@@ -1,0 +1,68 @@
+package sample;
+
+import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.chart.PieChart;
+
+public class Main extends Application {
+    @Override
+    public void start(Stage stage) {
+//Find a way to access the Array3 from the main code, not this fake version!!!
+        double[] Array3 = {5,10,10,10,10,10,10,10,10,10,5};
+
+        //Preparing ObservbleList object
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+
+            new PieChart.Data("2",Array3[0]),
+            new PieChart.Data("3",Array3[1]),
+            new PieChart.Data("4",Array3[2]),
+            new PieChart.Data("5",Array3[3]),
+            new PieChart.Data("6",Array3[4]),
+            new PieChart.Data("7",Array3[5]),
+            new PieChart.Data("8",Array3[6]),
+            new PieChart.Data("9",Array3[7]),
+            new PieChart.Data("10",Array3[8]),
+            new PieChart.Data("11",Array3[9]),
+            new PieChart.Data("12",Array3[10]));
+
+        //Creating a Pie chart
+        PieChart pieChart = new PieChart(pieChartData);
+
+        //Setting the title of the Pie chart
+        pieChart.setTitle("Frequency of Rolls");
+
+        //setting the direction to arrange the data
+        pieChart.setClockwise(true);
+
+        //Setting the length of the label line
+        pieChart.setLabelLineLength(25);
+
+        //Setting the labels of the pie chart visible
+        pieChart.setLabelsVisible(true);
+
+        //Setting the start angle of the pie chart
+        pieChart.setStartAngle(180);
+
+        //Creating a Group object
+        Group root = new Group(pieChart);
+
+        //Creating a scene object
+        Scene scene = new Scene(root, 600, 400);
+
+        //Setting title to the Stage
+        stage.setTitle("Pie Chart");
+
+        //Adding scene to the stage
+        stage.setScene(scene);
+
+        //Displaying the contents of the stage
+        stage.show();
+    }
+    public static void main(String args[]){
+        launch(args);
+    }
+}
