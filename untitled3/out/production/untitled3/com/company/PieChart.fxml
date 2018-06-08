@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="Anchorpane2" prefHeight="448.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.PieChartController">
+   <children>
+      <PieChart fx:id="pieChart" layoutX="50.0" layoutY="6.0" prefHeight="394.0" prefWidth="500.0" title="Frequency of Rolls" />
+      <Button fx:id="Re" layoutX="324.0" layoutY="403.0" mnemonicParsing="false" onAction="#RestartApp" prefHeight="42.0" prefWidth="74.0" text="Restart" />
+      <Button fx:id="Sa" layoutX="199.0" layoutY="403.0" mnemonicParsing="false" onAction="#SaveToFile" prefHeight="42.0" prefWidth="74.0" text="Save" />
+   </children>
+</AnchorPane>
